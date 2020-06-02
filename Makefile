@@ -1,4 +1,4 @@
-NAME = bubble comb quick insertion
+NAME = bubble comb quick insertion shell
 
 CXX = g++
 CXXFLAGS += -Wpedantic -Wall -Wextra -Werror
