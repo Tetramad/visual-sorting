@@ -1,5 +1,4 @@
-NAME = bubble
-SRC = probe.cc
+NAME = bubble comb
 
 CXX = g++
 CXXFLAGS += -Wpedantic -Wall -Wextra -Werror
