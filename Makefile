@@ -1,4 +1,4 @@
-NAME = bubble comb quick insertion shell selection heap counting
+NAME = bubble comb quick insertion shell selection heap counting radix
 
 CXX = g++
 CXXFLAGS += -Wpedantic -Wall -Wextra -Werror
