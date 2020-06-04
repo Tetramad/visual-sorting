@@ -5,7 +5,7 @@
 auto selection_sort(Prober &prober) -> void;
 
 auto main(void) -> int {
-  Prober prober(10);
+  Prober prober(32);
 
   selection_sort(prober);
 

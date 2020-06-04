@@ -8,7 +8,7 @@ auto radix_sort(Prober &prober) -> void;
 auto key(u16 val, u16 mask) -> std::size_t;
 
 auto main(void) -> int {
-  Prober prober(10);
+  Prober prober(32);
 
   radix_sort(prober);
 

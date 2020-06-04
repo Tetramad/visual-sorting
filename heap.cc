@@ -10,7 +10,7 @@ static auto lchild_index(std::size_t idx) -> std::size_t;
 static auto rchild_index(std::size_t idx) -> std::size_t;
 
 auto main(void) -> int {
-  Prober prober(10);
+  Prober prober(32);
 
   heap_sort(prober);
 

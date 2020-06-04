@@ -5,7 +5,7 @@
 auto quick_sort(Prober &prober, std::size_t b, std::size_t e) -> void;
 
 auto main(void) -> int {
-  Prober prober(10);
+  Prober prober(32);
 
   quick_sort(prober, 0, prober.size());
 

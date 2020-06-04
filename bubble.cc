@@ -5,7 +5,7 @@
 auto bubble_sort(Prober &prober) -> void;
 
 auto main(void) -> int {
-  Prober prober(10);
+  Prober prober(32);
 
   bubble_sort(prober);
 

@@ -7,7 +7,7 @@ auto counting_sort(Prober &prober) -> void;
 static auto key(u16 val) -> std::size_t;
 
 auto main(void) -> int {
-  Prober prober(10);
+  Prober prober(32);
 
   counting_sort(prober);
 

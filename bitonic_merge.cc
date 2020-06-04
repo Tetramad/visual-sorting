@@ -12,7 +12,7 @@ auto bitonic_swap(Prober &prober, bool ascending, std::size_t b, std::size_t e)
     -> void;
 
 auto main(void) -> int {
-  Prober prober(10);
+  Prober prober(32);
 
   bitonic_sort(prober, true, 0, prober.size());
 
