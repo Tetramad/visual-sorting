@@ -1,7 +1,7 @@
-NAME = bubble comb quick insertion shell selection heap counting radix
+NAME = bubble comb quick insertion shell selection heap counting radix bitonic_merge
 
 CXX = g++
-CXXFLAGS += -Wpedantic -Wall -Wextra -Werror
+CXXFLAGS += -std=c++17 -Wpedantic -Wall -Wextra -Werror
 
 .PHONY: all
 all: $(NAME)
