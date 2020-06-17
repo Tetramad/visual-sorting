@@ -1,25 +1,25 @@
 #include <cstdint>
 
-#include "./prober.hh"
+#include "./probius.hh"
 
-auto selection_sort(Prober &prober) -> void;
+auto selection_sort(Probius &probius) -> void;
 
 auto main(void) -> int {
-  Prober prober(32);
+  Probius probius(32, 32);
 
-  selection_sort(prober);
+  selection_sort(probius);
 
   return 0;
 }
 
-auto selection_sort(Prober &prober) -> void {
-  for (std::size_t i = 0; i < prober.size(); ++i) {
+auto selection_sort(Probius &probius) -> void {
+  for (std::size_t i = 0; i < probius.size(); ++i) {
     std::size_t mini = i;
-    for (std::size_t j = i + 1; j < prober.size(); ++j) {
-      if (prober.less(j, mini)) {
+    for (std::size_t j = i + 1; j < probius.size(); ++j) {
+      if (probius.less(j, mini)) {
         mini = j;
       }
     }
-    prober.swap(i, mini);
+    probius.swap(i, mini);
   }
 }

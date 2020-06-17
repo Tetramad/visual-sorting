@@ -2,26 +2,26 @@
 
 #include <cstdint>
 
-#include "./prober.hh"
+#include "./probius.hh"
 
-auto radix_sort(Prober &prober) -> void;
+auto radix_sort(Probius &probius) -> void;
 auto key(u16 val, u16 mask) -> std::size_t;
 
 auto main(void) -> int {
-  Prober prober(32);
+  Probius probius(32, 32);
 
-  radix_sort(prober);
+  radix_sort(probius);
 
   return 0;
 }
 
-auto radix_sort(Prober &prober) -> void {
+auto radix_sort(Probius &probius) -> void {
   std::size_t count[10];
-  std::vector<u16> aux(prober.size());
+  std::vector<u16> aux(probius.size());
 
   u16 max = 0;
-  for (std::size_t i = 0; i < prober.size(); ++i) {
-    u16 const tmp = prober.read(i);
+  for (std::size_t i = 0; i < probius.size(); ++i) {
+    u16 const tmp = probius.read(i);
     if (tmp > max) {
       max = tmp;
     }
@@ -32,8 +32,8 @@ auto radix_sort(Prober &prober) -> void {
       count[i] = 0;
     }
 
-    for (std::size_t i = 0; i < prober.size(); ++i) {
-      ++count[key(prober.read(i), mask)];
+    for (std::size_t i = 0; i < probius.size(); ++i) {
+      ++count[key(probius.read(i), mask)];
     }
 
     std::size_t total = 0;
@@ -43,14 +43,14 @@ auto radix_sort(Prober &prober) -> void {
       count[i] = tmp;
     }
 
-    for (std::size_t i = 0; i < prober.size(); ++i) {
-      u16 const val = prober.read(i);
+    for (std::size_t i = 0; i < probius.size(); ++i) {
+      u16 const val = probius.read(i);
       aux[count[key(val, mask)]] = val;
       ++count[key(val, mask)];
     }
 
-    for (std::size_t i = 0; i < prober.size(); ++i) {
-      prober.write(i, aux[i]);
+    for (std::size_t i = 0; i < probius.size(); ++i) {
+      probius.write(i, aux[i]);
     }
   }
 }

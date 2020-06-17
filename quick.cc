@@ -1,18 +1,18 @@
 #include <cstdint>
 
-#include "./prober.hh"
+#include "./probius.hh"
 
-auto quick_sort(Prober &prober, std::size_t b, std::size_t e) -> void;
+auto quick_sort(Probius &probius, std::size_t b, std::size_t e) -> void;
 
 auto main(void) -> int {
-  Prober prober(32);
+  Probius probius(32, 32);
 
-  quick_sort(prober, 0, prober.size());
+  quick_sort(probius, 0, probius.size());
 
   return 0;
 }
 
-auto quick_sort(Prober &prober, std::size_t b, std::size_t e) -> void {
+auto quick_sort(Probius &probius, std::size_t b, std::size_t e) -> void {
   if (e - b < 2) {
     return;
   }
@@ -21,14 +21,14 @@ auto quick_sort(Prober &prober, std::size_t b, std::size_t e) -> void {
   std::size_t r = e - 1;
 
   while (l <= r) {
-    if (prober.less(l, p)) {
+    if (probius.less(l, p)) {
       ++l;
     } else {
-      prober.swap(l, r);
+      probius.swap(l, r);
       --r;
     }
   }
-  prober.swap(r, p);
-  quick_sort(prober, b, l);
-  quick_sort(prober, l, e);
+  probius.swap(r, p);
+  quick_sort(probius, b, l);
+  quick_sort(probius, l, e);
 }

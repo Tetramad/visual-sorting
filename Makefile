@@ -10,5 +10,5 @@ all: $(NAME)
 clean:
 	$(RM) $(NAME)
 
-%: %.cc prober.hh prober.cc
-	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ $< prober.cc $(LDFLAGS) $(LDLIBS)
+%: %.cc probius.cc probius.hh terminal.hh terminal.cc
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ $< probius.cc terminal.cc  $(LDFLAGS) $(LDLIBS)

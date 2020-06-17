@@ -1,26 +1,26 @@
 #include <climits>
 #include <cstdint>
 
-#include "./prober.hh"
+#include "./probius.hh"
 
-auto counting_sort(Prober &prober) -> void;
+auto counting_sort(Probius &probius) -> void;
 static auto key(u16 val) -> std::size_t;
 
 auto main(void) -> int {
-  Prober prober(32);
+  Probius probius(32, 32);
 
-  counting_sort(prober);
+  counting_sort(probius);
 
   return 0;
 }
 
-auto counting_sort(Prober &prober) -> void {
+auto counting_sort(Probius &probius) -> void {
   std::size_t count[USHRT_MAX + 1] = {
       0,
   };
 
-  for (std::size_t i = 0; i < prober.size(); ++i) {
-    ++count[key(prober.read(i))];
+  for (std::size_t i = 0; i < probius.size(); ++i) {
+    ++count[key(probius.read(i))];
   }
 
   std::size_t total = 0;
@@ -30,15 +30,15 @@ auto counting_sort(Prober &prober) -> void {
     count[i] = tmp;
   }
 
-  std::vector<u16> aux(prober.size());
-  for (std::size_t i = 0; i < prober.size(); ++i) {
-    u16 const val = prober.read(i);
+  std::vector<u16> aux(probius.size());
+  for (std::size_t i = 0; i < probius.size(); ++i) {
+    u16 const val = probius.read(i);
     aux[count[key(val)]] = val;
     ++count[key(val)];
   }
 
-  for (std::size_t i = 0; i < prober.size(); ++i) {
-    prober.write(i, aux[i]);
+  for (std::size_t i = 0; i < probius.size(); ++i) {
+    probius.write(i, aux[i]);
   }
 }
 
