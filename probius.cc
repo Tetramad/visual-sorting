@@ -9,11 +9,11 @@
 #include "./probius.hh"
 #include "./terminal.hh"
 
-Probius::Probius(std::size_t width, std::size_t height)
-    : width(width), height(height), vector() {
+Probius::Probius()
+    : width(32), height(32), vector() {
 
-  vector.resize([width]() -> std::size_t {
-    auto w = width;
+  vector.resize([this]() -> std::size_t {
+    auto w = this->width;
     auto count = 0;
     while (w > 1) {
       w >>= 1;

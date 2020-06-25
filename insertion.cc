@@ -5,7 +5,7 @@
 auto insertion_sort(Probius &probius) -> void;
 
 auto main(void) -> int {
-  Probius probius(32, 32);
+  Probius probius;
 
   insertion_sort(probius);
 

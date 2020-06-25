@@ -10,7 +10,7 @@ static auto lchild_index(std::size_t idx) -> std::size_t;
 static auto rchild_index(std::size_t idx) -> std::size_t;
 
 auto main(void) -> int {
-  Probius probius(32, 32);
+  Probius probius;
 
   heap_sort(probius);
 

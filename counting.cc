@@ -7,7 +7,7 @@ auto counting_sort(Probius &probius) -> void;
 static auto key(u16 val) -> std::size_t;
 
 auto main(void) -> int {
-  Probius probius(32, 32);
+  Probius probius;
 
   counting_sort(probius);
 

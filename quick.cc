@@ -5,7 +5,7 @@
 auto quick_sort(Probius &probius, std::size_t b, std::size_t e) -> void;
 
 auto main(void) -> int {
-  Probius probius(32, 32);
+  Probius probius;
 
   quick_sort(probius, 0, probius.size());
 

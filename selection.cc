@@ -5,7 +5,7 @@
 auto selection_sort(Probius &probius) -> void;
 
 auto main(void) -> int {
-  Probius probius(32, 32);
+  Probius probius;
 
   selection_sort(probius);
 

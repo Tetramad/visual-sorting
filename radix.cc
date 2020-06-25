@@ -8,7 +8,7 @@ auto radix_sort(Probius &probius) -> void;
 auto key(u16 val, u16 mask) -> std::size_t;
 
 auto main(void) -> int {
-  Probius probius(32, 32);
+  Probius probius;
 
   radix_sort(probius);
 

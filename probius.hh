@@ -10,7 +10,7 @@ using u16 = unsigned short int;
 
 class Probius {
 public:
-  explicit Probius(std::size_t width, std::size_t height);
+  Probius();
   ~Probius();
   Probius(Probius const &other) = delete;
   Probius(Probius &&other) noexcept = delete;
